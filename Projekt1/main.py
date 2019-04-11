@@ -6,14 +6,8 @@ from points import*
 from fun import*
 def main(zad,mi,lambda2,loci,prawd,N,tab):
 
-    #inicjalizacja zmiennych algorytmu
-    #zad = 1 #1 - podpunkt a, 0 -podpunkt b
-    #mi = 20 #wielkosc popoluacji P
-    #lambda2 = 7*mi  #wielkosc populacji T
-    #loci = 28 #liczba loci
-    #prawd = 0.1 #pradopodobienkstwo mutacji genu
+    #inicjalizacja wartosci parametrow
     n = 10 # ilosc genow na reprezentacje pojedynczego x,y lub r
-    #N = 30 #ilosc punktow
     k = 0
     old_best = [0,0,0,0]
 
@@ -41,5 +35,10 @@ def main(zad,mi,lambda2,loci,prawd,N,tab):
         pop_p = new_p(result,mi)#generacja nowej populacji P
         old_best = new_best
 
-
-    save_data(N,tab,result[0],i-k)#zapisz punkty do pliku
+    data = []
+    for i in range(4):
+        data.append(result[i])
+    data.append(k)
+    raw_data = {'data':data}
+    df = pandas.DataFrame(raw_data,columns=['data'])
+    df.to_excel("data.xlsx",sheet_name='data')
