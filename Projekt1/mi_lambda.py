@@ -5,6 +5,7 @@ import pandas
 from points import*
 from fun import*
 
+
 #inicjalizacja zmiennych algorytmu
 zad = 1 #1 - podpunkt a, 0 -podpunkt b
 mi = 20 #wielkosc popoluacji P

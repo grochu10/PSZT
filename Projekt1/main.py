@@ -4,7 +4,7 @@ import math
 import pandas
 from points import*
 from fun import*
-def main(zad,mi,lambda2,loci,prawd,N):
+def main(zad,mi,lambda2,loci,prawd,N,tab):
 
     #inicjalizacja zmiennych algorytmu
     #zad = 1 #1 - podpunkt a, 0 -podpunkt b
@@ -17,8 +17,6 @@ def main(zad,mi,lambda2,loci,prawd,N):
     k = 0
     old_best = [0,0,0,0]
 
-    #generacja punktow
-    tab = rand_points(N)
     #generacja poczatkowej populacji P
     pop_p = generate_p(mi,n)
 
